@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="app-header">
+            <h1 class="app-title">Recipe Finder</h1>
+            <p class="app-subtitle">Search delicious recipes by ingredient, craving, or cuisine.</p>
+        </header>
+
+        <main class="card">
+            <!-- Search bar -->
+            <form id="search-form" class="search-form">
+                <input
+                    type="text"
+                    id="query-input"
+                    placeholder="Try 'chicken', 'pasta', or 'vegan tacos'..."
+                    autocomplete="off"
+                />
+                <select id="diet-filter">
+                    <option value="">Any diet</option>
+                    <option value="balanced">Balanced</option>
+                    <option value="high-protein">High Protein</option>
+                    <option value="low-fat">Low Fat</option>
+                    <option value="low-carb">Low Carb</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+
+            <!-- Status messages -->
+            <div id="status-bar">
+                <div id="loading" class="status-message">Loading recipes...</div>
+                <div id="error-message" class="status-message error"></div>
+            </div>
+
+            <!-- Results -->
+            <section id="results" class="results-grid">
+                <!-- Recipe cards injected here -->
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <span>Powered by the <a href="https://developer.edamam.com/edamam-recipe-api" target="_blank" rel="noopener noreferrer">Edamam Recipe API</a></span>
+        </footer>
+    </div>
+
+    <!-- Modal for recipe details -->
+    <div id="modal-backdrop" class="modal-backdrop hidden">
+        <div class="modal">
+            <button id="modal-close-btn" class="modal-close">&times;</button>
+            <div class="modal-content">
+                <h2 id="modal-title"></h2>
+                <p id="modal-meta"></p>
+                <h3>Ingredients</h3>
+                <ul id="modal-ingredients"></ul>
+                <a id="modal-link" href="#" target="_blank" class="primary-btn">
+                    View full recipe
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
