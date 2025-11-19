@@ -1,11 +1,5 @@
-// ==============================
-// Recipe Finder - Edamam API
-// ==============================
-
-// 👉 Replace these with your real Edamam credentials
-//    from https://developer.edamam.com/
-const APP_ID = 'YOUR_APP_ID_HERE';
-const APP_KEY = 'YOUR_APP_KEY_HERE';
+const APP_ID = 'ed43992e';
+const APP_KEY = 'aa5d826d4ba6ae8139a9b472f49ec652';
 
 const BASE_URL = 'https://api.edamam.com/api/recipes/v2';
 
@@ -28,9 +22,6 @@ const modalLink = document.getElementById('modal-link');
 // State
 let lastResults = [];
 
-// ==============================
-// Event Listeners
-// ==============================
 
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
